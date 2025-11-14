@@ -7,6 +7,8 @@ require("./xyz.js");
 const {calculateSum,calculatemultiply}=require("./calculate");
 
 // var name="Node practice";
+const data = require("./data.json");
+console.log(data);
 var a=10;
 var b=10;
 console.log(calculateSum(a,b));
