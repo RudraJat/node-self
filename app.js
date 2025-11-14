@@ -1,7 +1,6 @@
 require("./xyz.js");
 
-const calculateSum=require("./sum.js").calculateSum;
-const exam=require("./sum.js").exam;
+const {exam,calculateSum}=require("./sum.js");
 
 var name="Node practice";
 var a=10;
