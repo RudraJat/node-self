@@ -1,4 +1,11 @@
 require("./xyz.js");
+const express = require('express');
+const app = express();
+const userRouter = require('./calculate/user.js');
+const productRouter = require('./calculate/product.js');
+
+app.use('/user', userRouter);
+app.use('/product', productRouter);
 
 // const {calculateSum}=require("./calculate/sum.js");
 // const {calculatemultiply}=require("./calculate/multiply.js");
