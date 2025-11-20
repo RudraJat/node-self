@@ -1,11 +1,11 @@
-const {MongoClient}=require("mongodb");
 
-//Conection URL
-const url =
-    "mongodb+srv://Rudra01:Rpsj123@nodeself.whijtvy.mongodb.net/";
+require("dotenv").config();
+const { MongoClient } = require("mongodb");
 
+console.log("MONGODB_URI =", process.env.MONGODB_URI); 
 
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.MONGODB_URI);
+
 
 //Database Name
 const dbName = "FirstDataBase";
@@ -34,11 +34,11 @@ async function main(){
     
     // //Read
     // //Finding All Documents
-    // const findResult = await collection.find({}).toArray();
-    // console.log("Found documents =>", findResult);
+    const findResult = await collection.find({}).toArray();
+    console.log("Found documents =>", findResult);
     // console.log("Total number of documents:", count);
 
-    //Find all the documents with city Haridwar
+    // Find all the documents with city Haridwar
     // const hardidwarUsers = await collection.find({city: "Haridwar"}).toArray();
     // console.log("Users from Haridwar =>", hardidwarUsers);
     
@@ -50,8 +50,8 @@ async function main(){
     // console.log("Updated documents =>", updateResult);
 
     //DELETE Documents
-    const deleteResult = await collection.deleteOne({_id: "01"});
-    console.log("Deleted document =>", deleteResult);
+    // const deleteResult = await collection.deleteOne({_id: "01"});
+    // console.log("Deleted document =>", deleteResult);
     
     return 'done.';
 }
