@@ -1,0 +1,24 @@
+const express = require('express');
+const app = express();
+
+app.use((req,res,next)=>{
+    console.log("[Global]"+req.method+""+req.url);
+    next();
+});
+
+app.all(/^\/admin/, (req,res,next)=>{
+    console.log("Admin Gaurd running for all /admin routes");
+});
+
+app.get('/',(req,res)=>{
+    res.send("Home Page is Here!");
+});
+
+app.get('/admin',(req,res)=>{
+    res.send("Admin Dashboard");
+});
+
+app.get('/admin/users',(req,res)=>{
+    res.send("Server is Running");
+});
+

@@ -1,20 +1,51 @@
-require("./xyz.js");
+// const express = require("express");
+// const app = express();
+
+// const userRouter = require("./routes/users");
+// const productRouter = require("./routes/products");
+// const orderRouter = require("./routes/orders.js");
+
+// app.use(express.json());
 
 
-// const {calculateSum}=require("./calculate/sum.js");
-// const {calculatemultiply}=require("./calculate/multiply.js");
+// app.use("/users", userRouter);
+// app.use("/products", productRouter);
+// app.use("/orders", orderRouter);
 
-//nodejs knows from where to recieve the module if we give folder name it will look for index.js file inside that folder
-const {calculateSum,calculatemultiply}=require("./calculate");
 
-// var name="Node practice";
-const data = require("./data.json");
-console.log(data);
-var a=10;
-var b=10;
-console.log(calculateSum(a,b));
-console.log(calculatemultiply(a,b));
 
-// console.log(exam);
-// console.log("Welcome to "+name);
-// console.log(a+b);
+// const PORT = 5000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+//ETP
+const add = require("./ETPDay1-9/math");
+
+//1
+console.log("Sum: ", add(5,9));
+
+//2
+function greet(name, callback){
+  console.log("Hello, "+name);
+  callback();
+}
+
+function after(){
+  console.log("This is after greeting");
+}
+
+greet("Alice", after);
+
+//3
+async function print(){
+  console.log(1);
+  const data = await new Promise((resolve,reject)=>{
+    setTimeout (()=>{resolve("done")},2000);
+  });
+  console.log(3);
+}
+
+print();
+console.log(2);
+
