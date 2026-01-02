@@ -10,4 +10,6 @@ fs.writeFileSync("user.json", JSON.stringify(user));
 
 const data = JSON.parse(fs.readFileSync("user.json", "utf-8"));
 console.log("User Data: ", data);
+
+// Clean up
 fs.unlinkSync("user.json");
